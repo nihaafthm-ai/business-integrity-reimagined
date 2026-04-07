@@ -4,17 +4,16 @@ import { Button } from "@/components/ui/button";
 const CTASection = () => {
   return (
     <section className="py-24 bg-hero relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary blur-3xl" />
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-primary blur-3xl" />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h2 className="text-3xl lg:text-5xl font-bold text-hero mb-6">
+        <h2 className="text-3xl lg:text-5xl font-bold mb-6" style={{ color: "white" }}>
           Ready for a Better Practice Partnership?
         </h2>
-        <p className="text-lg text-hero/70 mb-10 max-w-2xl mx-auto">
+        <p className="text-lg mb-10 max-w-2xl mx-auto" style={{ color: "hsl(0 0% 100% / 0.85)" }}>
           Find out how we do things differently for our partner practices and their patients at BIS. Recognized by Becker's Hospital Review as a top healthcare RCM company.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
