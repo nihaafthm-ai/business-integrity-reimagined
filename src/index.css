@@ -35,8 +35,8 @@
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --hero-bg: 200 30% 12%;
-    --hero-foreground: 0 0% 95%;
+    --hero-bg: 180 100% 27%;
+    --hero-foreground: 0 0% 100%;
     --teal-glow: 180 100% 35%;
     --teal-dark: 180 100% 20%;
     --teal-light: 180 40% 92%;
