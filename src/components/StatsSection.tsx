@@ -26,8 +26,8 @@ const StatsSection = () => {
     <section ref={ref} className="py-20 bg-hero">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <p className="text-primary uppercase tracking-widest text-sm font-semibold mb-4">Who We Are</p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-hero">
+          <p className="uppercase tracking-widest text-sm font-semibold mb-4" style={{ color: "hsl(0 0% 100% / 0.8)" }}>Who We Are</p>
+          <h2 className="text-3xl lg:text-4xl font-bold" style={{ color: "white" }}>
             Trusted by industry-leading healthcare organizations across the U.S.
           </h2>
         </div>
@@ -35,17 +35,17 @@ const StatsSection = () => {
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`text-center p-8 rounded-2xl bg-navy-light/50 border border-primary/10 transition-all duration-700 ${
+              className={`text-center p-8 rounded-2xl border transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
               }`}
-              style={{ transitionDelay: `${i * 150}ms` }}
+              style={{ backgroundColor: "hsl(180 100% 22% / 0.5)", borderColor: "hsl(0 0% 100% / 0.15)", transitionDelay: `${i * 150}ms` }}
             >
-              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">
+              <div className="text-4xl lg:text-5xl font-bold mb-2" style={{ color: "white" }}>
                 {stat.value}
               </div>
-              <div className="text-sm text-hero/60">{stat.label}</div>
+              <div className="text-sm" style={{ color: "hsl(0 0% 100% / 0.7)" }}>{stat.label}</div>
             </div>
           ))}
         </div>
