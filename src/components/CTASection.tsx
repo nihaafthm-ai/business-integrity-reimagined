@@ -18,11 +18,11 @@ const CTASection = () => {
           Find out how we do things differently for our partner practices and their patients at BIS. Recognized by Becker's Hospital Review as a top healthcare RCM company.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Button className="bg-primary text-primary-foreground hover:bg-accent rounded-full px-10 py-6 text-lg font-semibold group">
+          <Button className="rounded-full px-10 py-6 text-lg font-semibold group" style={{ backgroundColor: "white", color: "hsl(180 100% 27%)" }}>
             Get Started
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button variant="outline" className="rounded-full px-10 py-6 text-lg font-semibold border-hero/30 text-hero hover:bg-hero/10 hover:text-hero">
+          <Button variant="outline" className="rounded-full px-10 py-6 text-lg font-semibold" style={{ borderColor: "hsl(0 0% 100% / 0.4)", color: "white", backgroundColor: "transparent" }}>
             View Case Studies
           </Button>
         </div>
