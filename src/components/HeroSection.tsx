@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 
 const badges = [
   { label: "HIPAA Compliant", color: "bg-destructive" },
-  { label: "ISO 27001", color: "bg-destructive" },
-  { label: "ISO 9001", color: "bg-destructive" },
+  { label: "ISO 27001:2022", color: "bg-destructive" },
+  { label: "ISO 9001:2015", color: "bg-destructive" },
 ];
 
 const partnerNames = [
