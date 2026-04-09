@@ -44,12 +44,12 @@ const ServicesSection = () => {
     <section ref={ref} id="solutions" className="py-24 bg-section-alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-primary uppercase tracking-widest text-sm font-semibold mb-4">What We Do</p>
+          <p className="text-primary uppercase tracking-[0.2em] text-xs font-semibold mb-4">Our Solutions</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Explore Our Business Solutions
+            Explore Our Wide Range of <span className="text-primary">Business Solutions</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            We use technology and expertise to yield the revenue to realize your vision.
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base">
+            Maximize your financial performance with our results-driven revenue cycle management, ensuring efficient and compliant operations.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ const ServicesSection = () => {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-500 ${
+              className={`group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/20 premium-shadow hover:premium-shadow-lg transition-all duration-500 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ transitionDelay: `${i * 150}ms` }}
@@ -66,13 +66,13 @@ const ServicesSection = () => {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                   width={800}
                   height={600}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-                <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-primary-foreground">
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
+                <h3 className="absolute bottom-4 left-4 right-4 text-lg font-bold text-primary-foreground">
                   {service.title}
                 </h3>
               </div>
@@ -82,7 +82,7 @@ const ServicesSection = () => {
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {service.features.map((f) => (
-                    <span key={f} className="text-xs bg-secondary text-secondary-foreground px-3 py-1 rounded-full font-medium">
+                    <span key={f} className="text-xs bg-primary/8 text-primary px-3 py-1.5 rounded-full font-medium">
                       {f}
                     </span>
                   ))}

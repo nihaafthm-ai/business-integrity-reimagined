@@ -5,44 +5,48 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 200 25% 10%;
+    --foreground: 210 20% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 200 25% 10%;
+    --card-foreground: 210 20% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 200 25% 10%;
+    --popover-foreground: 210 20% 16%;
 
-    --primary: 180 100% 27%;
+    --primary: 174 100% 29%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 180 15% 95%;
-    --secondary-foreground: 200 25% 10%;
+    --secondary: 170 20% 96%;
+    --secondary-foreground: 210 20% 16%;
 
-    --muted: 180 10% 96%;
-    --muted-foreground: 0 0% 15%;
+    --muted: 170 12% 95%;
+    --muted-foreground: 210 10% 40%;
 
-    --accent: 180 100% 22%;
+    --accent: 174 100% 24%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 180 15% 88%;
-    --input: 180 15% 88%;
-    --ring: 180 100% 27%;
+    --border: 210 16% 90%;
+    --input: 210 16% 90%;
+    --ring: 174 100% 29%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Custom tokens */
-    --hero-bg: 180 100% 27%;
+    /* Premium tokens */
+    --hero-bg: 174 100% 29%;
     --hero-foreground: 0 0% 100%;
-    --teal-glow: 180 100% 35%;
-    --teal-dark: 180 100% 20%;
-    --teal-light: 180 40% 92%;
-    --section-alt: 180 15% 97%;
-    --navy: 180 100% 20%;
-    --navy-light: 180 80% 25%;
+    --teal-glow: 174 80% 42%;
+    --teal-dark: 180 100% 18%;
+    --teal-light: 170 35% 95%;
+    --section-alt: 210 20% 98%;
+    --navy: 180 100% 18%;
+    --navy-light: 180 60% 25%;
+    --surface-elevated: 0 0% 100%;
+    --surface-subtle: 210 25% 97%;
+    --gradient-start: 174 100% 29%;
+    --gradient-end: 180 80% 22%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -62,9 +66,12 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -73,7 +80,7 @@
     color: hsl(var(--hero-foreground));
   }
   .bg-hero {
-    background-color: hsl(var(--hero-bg));
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
   }
   .bg-navy {
     background-color: hsl(var(--navy));
@@ -89,6 +96,17 @@
   }
   .text-teal-glow {
     color: hsl(var(--teal-glow));
+  }
+  .glass-card {
+    background: hsl(0 0% 100% / 0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(0 0% 100% / 0.12);
+  }
+  .premium-shadow {
+    box-shadow: 0 4px 24px -4px hsl(174 100% 29% / 0.12), 0 0 0 1px hsl(210 16% 90% / 0.5);
+  }
+  .premium-shadow-lg {
+    box-shadow: 0 12px 48px -8px hsl(174 100% 29% / 0.15), 0 0 0 1px hsl(210 16% 90% / 0.5);
   }
 }
 
@@ -123,6 +141,11 @@
   100% { transform: rotate(360deg); }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 .animate-scroll-left {
   animation: scroll-left 30s linear infinite;
 }
@@ -145,6 +168,11 @@
 
 .animate-dot-pattern {
   animation: dot-pattern 60s linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+  background-size: 200% 100%;
 }
 
 /* Stagger animation delays */

@@ -10,27 +10,27 @@ const reasons = [
   {
     icon: Users,
     title: "Bilingual Workforce",
-    description: "Our bilingual team members help improve patient care in the growing Latino communities.",
+    description: "Our bilingual team members help improve patient care in the growing Latino communities across the U.S.",
   },
   {
     icon: GraduationCap,
     title: "Advanced Education",
-    description: "80% of the BIS workforce holds four-year college degrees, enhancing performance.",
+    description: "80% of the BIS workforce holds four-year college degrees, ensuring high-achieving professionals.",
   },
   {
     icon: TrendingDown,
     title: "Reduced Costs",
-    description: "50% reduction in overall costs while meeting metrics that promote business growth.",
+    description: "With a 50% reduction in overall costs, the BIS Patient Experience Team drives business growth.",
   },
   {
     icon: Shield,
-    title: "Denial Management",
+    title: "Denial Management Experts",
     description: "Unparalleled root cause analysis to minimize denial rates and streamline automations.",
   },
   {
     icon: Award,
     title: "Superior Performance",
-    description: "In every head-to-head trial, the BIS team has out-performed other RCM providers.",
+    description: "In every head-to-head trial, BIS has outperformed other RCM providers to improve KPIs.",
   },
 ];
 
@@ -53,25 +53,25 @@ const WhyPartnerSection = () => {
     <section ref={ref} className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-primary uppercase tracking-widest text-sm font-semibold mb-4">Why BIS</p>
+          <p className="text-primary uppercase tracking-[0.2em] text-xs font-semibold mb-4">Why Partner With BIS</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-            Why Partner With BIS
+            What Makes Us <span className="text-primary">Different</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map((reason, i) => (
             <div
               key={reason.title}
-              className={`group p-8 rounded-2xl border border-border hover:border-primary/30 hover:shadow-lg bg-card transition-all duration-500 ${
+              className={`group p-8 rounded-2xl border border-border bg-card hover:border-primary/20 premium-shadow hover:premium-shadow-lg transition-all duration-500 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+              <div className="w-14 h-14 rounded-xl bg-primary/8 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
                 <reason.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">{reason.title}</h3>
+              <h3 className="text-lg font-bold text-foreground mb-3">{reason.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{reason.description}</p>
             </div>
           ))}

@@ -23,29 +23,30 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-20 bg-hero">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="py-20 bg-hero relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <p className="uppercase tracking-widest text-sm font-semibold mb-4" style={{ color: "hsl(0 0% 100% / 0.8)" }}>Who We Are</p>
-          <h2 className="text-3xl lg:text-4xl font-bold" style={{ color: "white" }}>
+          <p className="uppercase tracking-[0.2em] text-xs font-semibold mb-4 text-primary-foreground/60">Who We Are</p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground">
             Trusted by industry-leading healthcare organizations across the U.S.
           </h2>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`text-center p-8 rounded-2xl border transition-all duration-700 ${
+              className={`text-center p-8 rounded-2xl glass-card transition-all duration-700 hover:bg-primary-foreground/10 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
               }`}
-              style={{ backgroundColor: "hsl(180 100% 22% / 0.5)", borderColor: "hsl(0 0% 100% / 0.15)", transitionDelay: `${i * 150}ms` }}
+              style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="text-4xl lg:text-5xl font-bold mb-2" style={{ color: "white" }}>
+              <div className="text-4xl lg:text-5xl font-extrabold mb-2 text-primary-foreground">
                 {stat.value}
               </div>
-              <div className="text-sm" style={{ color: "hsl(0 0% 100% / 0.7)" }}>{stat.label}</div>
+              <div className="text-sm text-primary-foreground/65 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

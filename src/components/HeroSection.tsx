@@ -27,17 +27,19 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen bg-hero overflow-hidden pt-28 lg:pt-32">
+      {/* Subtle gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20" />
+      
       {/* Dot pattern decoration */}
-      <div className="absolute right-0 top-1/4 w-[500px] h-[500px] opacity-20 animate-dot-pattern">
-        {Array.from({ length: 15 }).map((_, row) =>
-          Array.from({ length: 15 }).map((_, col) => (
+      <div className="absolute right-0 top-1/4 w-[500px] h-[500px] opacity-10 animate-dot-pattern">
+        {Array.from({ length: 12 }).map((_, row) =>
+          Array.from({ length: 12 }).map((_, col) => (
             <div
               key={`${row}-${col}`}
-              className="absolute w-1.5 h-1.5 rounded-full"
+              className="absolute w-1 h-1 rounded-full bg-primary-foreground/50"
               style={{
-                top: `${row * 6.6}%`,
-                left: `${col * 6.6}%`,
-                backgroundColor: "hsl(0 0% 100% / 0.5)",
+                top: `${row * 8.3}%`,
+                left: `${col * 8.3}%`,
               }}
             />
           ))
@@ -48,38 +50,45 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
           {/* Left content */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ color: "white" }}>
-              At Last.
-              <br />
-              A Solutions Partner That Prioritizes Your Business
-              <br />
-              <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold" style={{ color: "hsl(0 0% 100% / 0.85)" }}>
+            <div>
+              <p className="text-sm uppercase tracking-[0.2em] font-medium text-primary-foreground/60 mb-4">
+                Driving Operational Excellence
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-primary-foreground">
+                A Solutions
+                <br />
+                Partner That
+                <br />
+                Prioritizes Your
+                <br />
+                Business
+              </h1>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-foreground/80 mt-3">
                 AND your Patients
-              </span>
-            </h1>
+              </p>
+            </div>
 
-            <p className="text-lg max-w-lg" style={{ color: "hsl(0 0% 100% / 0.8)" }}>
+            <p className="text-base lg:text-lg max-w-lg text-primary-foreground/75 leading-relaxed">
               Business Integrity Services delivers expert healthcare solutions in revenue cycle management, medical coding, compliance, and patient scheduling.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button className="rounded-full px-8 py-6 text-base font-semibold group" style={{ backgroundColor: "white", color: "hsl(180 100% 27%)" }}>
+              <Button className="rounded-full px-8 py-6 text-base font-semibold group bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-lg shadow-black/10">
                 Free Denial Trend Analysis
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" className="rounded-full px-8 py-6 text-base font-semibold group" style={{ borderColor: "hsl(0 0% 100% / 0.4)", color: "white", backgroundColor: "transparent" }}>
+              <Button variant="outline" className="rounded-full px-8 py-6 text-base font-semibold group border-primary-foreground/30 text-primary-foreground bg-primary-foreground/5 hover:bg-primary-foreground/10 backdrop-blur-sm">
                 <Play className="w-4 h-4 mr-2" />
                 Watch Video
               </Button>
             </div>
 
-            {/* Red badges like AGS */}
+            {/* Certification badges */}
             <div className="flex flex-wrap gap-3 pt-2">
               {badges.map((badge) => (
                 <span
                   key={badge.label}
-                  className={`${badge.color} text-xs font-bold px-4 py-2 rounded-md uppercase tracking-wider`}
-                  style={{ color: "white" }}
+                  className={`${badge.color} text-destructive-foreground text-xs font-bold px-4 py-2 rounded-md uppercase tracking-wider shadow-sm`}
                 >
                   {badge.label}
                 </span>
@@ -89,10 +98,10 @@ const HeroSection = () => {
 
           {/* Right image */}
           <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-            <div className="relative w-full max-w-[480px] mx-auto aspect-square">
+            <div className="relative w-full max-w-[460px] mx-auto aspect-square">
               {/* Glow behind */}
-              <div className="absolute -inset-6 rounded-full blur-3xl" style={{ backgroundColor: "hsl(180 100% 35% / 0.2)" }} />
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4" style={{ borderColor: "hsl(0 0% 100% / 0.15)" }}>
+              <div className="absolute -inset-8 rounded-full bg-teal-glow/15 blur-3xl" />
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-foreground/10 shadow-2xl shadow-black/20">
                 <img
                   src={heroImage}
                   alt="Healthcare professional"
@@ -101,36 +110,33 @@ const HeroSection = () => {
                   height={1080}
                 />
               </div>
-              {/* Dot overlay */}
-              <div className="absolute -right-6 -bottom-6 w-40 h-40 opacity-40">
-                {Array.from({ length: 8 }).map((_, row) =>
-                  Array.from({ length: 8 }).map((_, col) => (
-                    <div
-                      key={`o-${row}-${col}`}
-                      className="absolute w-2 h-2 rounded-full"
-                      style={{ top: `${row * 12.5}%`, left: `${col * 12.5}%`, backgroundColor: "hsl(0 0% 100% / 0.5)" }}
-                    />
-                  ))
-                )}
+              {/* Floating stat cards */}
+              <div className="absolute -right-4 top-1/4 glass-card rounded-xl px-5 py-3 shadow-lg">
+                <p className="text-2xl font-bold text-primary-foreground">200+</p>
+                <p className="text-xs text-primary-foreground/70">Clinics Served</p>
+              </div>
+              <div className="absolute -left-4 bottom-1/4 glass-card rounded-xl px-5 py-3 shadow-lg">
+                <p className="text-2xl font-bold text-primary-foreground">1,000+</p>
+                <p className="text-xs text-primary-foreground/70">Team Members</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Partner logos bar — AGS style: white background strip */}
+      {/* Partner logos bar */}
       <div className="mt-16 pb-0">
-        <p className="text-center text-sm mb-6 uppercase tracking-widest font-medium" style={{ color: "hsl(0 0% 100% / 0.6)" }}>
+        <p className="text-center text-xs mb-6 uppercase tracking-[0.25em] font-medium text-primary-foreground/50">
           We work with premier organizations across the country
         </p>
-        <div className="bg-background rounded-t-2xl mx-4 lg:mx-8 overflow-hidden">
+        <div className="bg-background rounded-t-3xl mx-4 lg:mx-8 overflow-hidden shadow-2xl shadow-black/10">
           <div className="relative overflow-hidden py-6">
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
             <div className="flex animate-scroll-left">
               {[...partnerNames, ...partnerNames, ...partnerNames, ...partnerNames].map((name, i) => (
                 <div key={i} className="flex-shrink-0 mx-10 flex items-center justify-center h-12">
-                  <span className="text-muted-foreground font-semibold text-base whitespace-nowrap tracking-wide">{name}</span>
+                  <span className="text-muted-foreground font-semibold text-sm whitespace-nowrap tracking-wide">{name}</span>
                 </div>
               ))}
             </div>
