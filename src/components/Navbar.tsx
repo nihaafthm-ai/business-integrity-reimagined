@@ -15,34 +15,30 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-hero/95 backdrop-blur-sm border-b border-primary/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-hero backdrop-blur-sm border-b border-primary-foreground/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top bar */}
-        <div className="hidden lg:flex items-center justify-end gap-6 py-2 text-sm text-hero border-b border-primary/10">
-          <a href="tel:+18005926079" className="flex items-center gap-1.5 hover:text-primary transition-colors">
-            <Phone className="w-3.5 h-3.5" />
+        <div className="hidden lg:flex items-center justify-end gap-6 py-2 text-xs text-primary-foreground/70 border-b border-primary-foreground/10">
+          <a href="tel:+18005926079" className="flex items-center gap-1.5 hover:text-primary-foreground transition-colors">
+            <Phone className="w-3 h-3" />
             +1 800-592-6079
           </a>
-          <a href="mailto:contactus@thebisteam.com" className="flex items-center gap-1.5 hover:text-primary transition-colors">
-            <Mail className="w-3.5 h-3.5" />
+          <a href="mailto:contactus@thebisteam.com" className="flex items-center gap-1.5 hover:text-primary-foreground transition-colors">
+            <Mail className="w-3 h-3" />
             contactus@thebisteam.com
           </a>
         </div>
 
         {/* Main nav */}
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex items-center gap-2">
-            <div className="flex items-center gap-1">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">B</span>
-              </div>
-              <span className="text-xl font-bold text-hero">
-                BIS
-              </span>
+          <a href="#" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-full bg-primary-foreground flex items-center justify-center">
+              <span className="text-primary font-bold text-sm">B</span>
             </div>
-            <span className="hidden sm:block text-xs text-muted-foreground leading-tight max-w-[160px]">
-              Business Integrity Services
-            </span>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-primary-foreground leading-tight">BIS</span>
+              <span className="hidden sm:block text-[10px] text-primary-foreground/50 uppercase tracking-wider leading-tight">Business Integrity Services</span>
+            </div>
           </a>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -50,7 +46,7 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-hero/80 hover:text-primary transition-colors font-medium"
+                className="text-sm text-primary-foreground/75 hover:text-primary-foreground transition-colors font-medium"
               >
                 {link.label}
               </a>
@@ -58,13 +54,13 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:block">
-            <Button className="bg-primary text-primary-foreground hover:bg-accent rounded-full px-6">
+            <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-full px-6 font-semibold shadow-sm">
               Contact Us
             </Button>
           </div>
 
           <button
-            className="lg:hidden text-hero"
+            className="lg:hidden text-primary-foreground"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -74,21 +70,23 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="lg:hidden bg-hero border-t border-primary/10">
-          <div className="px-4 py-4 space-y-3">
+        <div className="lg:hidden bg-hero border-t border-primary-foreground/10">
+          <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="block text-hero/80 hover:text-primary transition-colors font-medium py-2"
+                className="block text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/5 transition-colors font-medium py-3 px-3 rounded-lg"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-accent rounded-full mt-4">
-              Contact Us
-            </Button>
+            <div className="pt-3">
+              <Button className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-full font-semibold">
+                Contact Us
+              </Button>
+            </div>
           </div>
         </div>
       )}
