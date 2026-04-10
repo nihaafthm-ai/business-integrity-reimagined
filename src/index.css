@@ -5,22 +5,22 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 20% 16%;
+    --foreground: 215 25% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 20% 16%;
+    --card-foreground: 215 25% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 20% 16%;
+    --popover-foreground: 215 25% 16%;
 
     --primary: 174 100% 29%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 170 20% 96%;
-    --secondary-foreground: 210 20% 16%;
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 215 25% 16%;
 
-    --muted: 170 12% 95%;
-    --muted-foreground: 210 10% 40%;
+    --muted: 210 18% 95%;
+    --muted-foreground: 215 12% 42%;
 
     --accent: 174 100% 24%;
     --accent-foreground: 0 0% 100%;
@@ -28,25 +28,30 @@
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 16% 90%;
-    --input: 210 16% 90%;
+    --border: 210 18% 90%;
+    --input: 210 18% 90%;
     --ring: 174 100% 29%;
 
     --radius: 0.75rem;
 
-    /* Premium tokens */
-    --hero-bg: 174 100% 29%;
+    /* Premium palette: Navy + Teal + Gold */
+    --hero-bg: 215 60% 18%;
     --hero-foreground: 0 0% 100%;
+    --navy: 215 60% 18%;
+    --navy-light: 215 45% 28%;
+    --navy-deep: 215 70% 12%;
+    --teal: 174 100% 29%;
     --teal-glow: 174 80% 42%;
     --teal-dark: 180 100% 18%;
-    --teal-light: 170 35% 95%;
-    --section-alt: 210 20% 98%;
-    --navy: 180 100% 18%;
-    --navy-light: 180 60% 25%;
+    --teal-light: 174 25% 95%;
+    --gold: 40 90% 55%;
+    --gold-light: 40 80% 70%;
+    --gold-deep: 38 85% 45%;
+    --section-alt: 210 25% 97%;
     --surface-elevated: 0 0% 100%;
     --surface-subtle: 210 25% 97%;
-    --gradient-start: 174 100% 29%;
-    --gradient-end: 180 80% 22%;
+    --gradient-start: 215 60% 18%;
+    --gradient-end: 215 70% 12%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -80,13 +85,16 @@
     color: hsl(var(--hero-foreground));
   }
   .bg-hero {
-    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    background: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-deep)));
   }
   .bg-navy {
     background-color: hsl(var(--navy));
   }
   .bg-navy-light {
     background-color: hsl(var(--navy-light));
+  }
+  .bg-navy-deep {
+    background-color: hsl(var(--navy-deep));
   }
   .bg-section-alt {
     background-color: hsl(var(--section-alt));
@@ -97,17 +105,46 @@
   .text-teal-glow {
     color: hsl(var(--teal-glow));
   }
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
   .glass-card {
     background: hsl(0 0% 100% / 0.08);
     backdrop-filter: blur(16px);
     border: 1px solid hsl(0 0% 100% / 0.12);
   }
+  .glass-card-navy {
+    background: hsl(215 60% 18% / 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
   .premium-shadow {
-    box-shadow: 0 4px 24px -4px hsl(174 100% 29% / 0.12), 0 0 0 1px hsl(210 16% 90% / 0.5);
+    box-shadow: 0 4px 24px -4px hsl(215 60% 18% / 0.08), 0 0 0 1px hsl(210 18% 90% / 0.5);
   }
   .premium-shadow-lg {
-    box-shadow: 0 12px 48px -8px hsl(174 100% 29% / 0.15), 0 0 0 1px hsl(210 16% 90% / 0.5);
+    box-shadow: 0 12px 48px -8px hsl(215 60% 18% / 0.12), 0 0 0 1px hsl(210 18% 90% / 0.5);
   }
+}
+
+/* Geometric shape styles */
+.geo-circle {
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+}
+.geo-rect {
+  border-radius: 1.5rem;
+  position: absolute;
+  pointer-events: none;
+}
+.geo-ring {
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  border: 3px solid;
 }
 
 /* Scrolling partner logos */
@@ -136,9 +173,14 @@
   50% { opacity: 0.7; }
 }
 
-@keyframes dot-pattern {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
 }
 
 @keyframes shimmer {
@@ -166,8 +208,12 @@
   animation: pulse-soft 3s ease-in-out infinite;
 }
 
-.animate-dot-pattern {
-  animation: dot-pattern 60s linear infinite;
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
 }
 
 .animate-shimmer {
