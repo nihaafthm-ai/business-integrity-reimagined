@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import BlobShapes from "@/components/BlobShapes";
 import servicesRcm from "@/assets/services-rcm.jpg";
 import servicesScheduling from "@/assets/services-scheduling.jpg";
 import servicesCoding from "@/assets/services-coding.jpg";
@@ -41,8 +42,11 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section ref={ref} id="solutions" className="py-24 bg-section-alt">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} id="solutions" className="py-24 bg-section-alt relative overflow-hidden">
+      <BlobShapes variant="light" />
+      <BlobShapes variant="wave-teal" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <p className="text-primary uppercase tracking-[0.2em] text-xs font-semibold mb-4">Our Solutions</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -71,7 +75,7 @@ const ServicesSection = () => {
                   width={800}
                   height={600}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent" />
                 <h3 className="absolute bottom-4 left-4 right-4 text-lg font-bold text-primary-foreground">
                   {service.title}
                 </h3>

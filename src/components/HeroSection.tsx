@@ -1,12 +1,13 @@
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-professional.jpg";
+import BlobShapes from "@/components/BlobShapes";
 import { useEffect, useState } from "react";
 
 const badges = [
-  { label: "HIPAA Compliant", color: "bg-destructive" },
-  { label: "ISO 27001:2022", color: "bg-destructive" },
-  { label: "ISO 9001:2015", color: "bg-destructive" },
+  { label: "HIPAA Compliant", color: "bg-primary" },
+  { label: "ISO 27001:2022", color: "bg-navy-light" },
+  { label: "ISO 9001:2015", color: "bg-gold-deep" },
 ];
 
 const partnerNames = [
@@ -27,24 +28,8 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen bg-hero overflow-hidden pt-28 lg:pt-32">
-      {/* Subtle gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20" />
-      
-      {/* Dot pattern decoration */}
-      <div className="absolute right-0 top-1/4 w-[500px] h-[500px] opacity-10 animate-dot-pattern">
-        {Array.from({ length: 12 }).map((_, row) =>
-          Array.from({ length: 12 }).map((_, col) => (
-            <div
-              key={`${row}-${col}`}
-              className="absolute w-1 h-1 rounded-full bg-primary-foreground/50"
-              style={{
-                top: `${row * 8.3}%`,
-                left: `${col * 8.3}%`,
-              }}
-            />
-          ))
-        )}
-      </div>
+      {/* Organic blob decorations */}
+      <BlobShapes variant="hero" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
@@ -63,7 +48,7 @@ const HeroSection = () => {
                 <br />
                 Business
               </h1>
-              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-foreground/80 mt-3">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gold mt-3">
                 AND your Patients
               </p>
             </div>
@@ -73,7 +58,7 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button className="rounded-full px-8 py-6 text-base font-semibold group bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-lg shadow-black/10">
+              <Button className="rounded-full px-8 py-6 text-base font-semibold group bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20">
                 Free Denial Trend Analysis
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -88,7 +73,7 @@ const HeroSection = () => {
               {badges.map((badge) => (
                 <span
                   key={badge.label}
-                  className={`${badge.color} text-destructive-foreground text-xs font-bold px-4 py-2 rounded-md uppercase tracking-wider shadow-sm`}
+                  className={`${badge.color} text-primary-foreground text-xs font-bold px-4 py-2 rounded-md uppercase tracking-wider shadow-sm`}
                 >
                   {badge.label}
                 </span>
@@ -99,9 +84,11 @@ const HeroSection = () => {
           {/* Right image */}
           <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <div className="relative w-full max-w-[460px] mx-auto aspect-square">
-              {/* Glow behind */}
-              <div className="absolute -inset-8 rounded-full bg-teal-glow/15 blur-3xl" />
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-foreground/10 shadow-2xl shadow-black/20">
+              {/* Blob glow behind */}
+              <svg className="absolute -inset-12 w-[calc(100%+6rem)] h-[calc(100%+6rem)] opacity-30" viewBox="0 0 500 500" fill="none">
+                <path d="M250 50C340 50 430 100 450 200C470 300 430 400 350 440C270 480 170 460 100 390C30 320 20 220 60 140C100 60 170 50 250 50Z" fill="hsl(174, 80%, 42%)" />
+              </svg>
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-foreground/10 shadow-2xl shadow-primary/10">
                 <img
                   src={heroImage}
                   alt="Healthcare professional"
@@ -129,7 +116,7 @@ const HeroSection = () => {
         <p className="text-center text-xs mb-6 uppercase tracking-[0.25em] font-medium text-primary-foreground/50">
           We work with premier organizations across the country
         </p>
-        <div className="bg-background rounded-t-3xl mx-4 lg:mx-8 overflow-hidden shadow-2xl shadow-black/10">
+        <div className="bg-background rounded-t-3xl mx-4 lg:mx-8 overflow-hidden shadow-2xl shadow-navy/10">
           <div className="relative overflow-hidden py-6">
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />

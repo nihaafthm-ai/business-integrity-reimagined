@@ -24,7 +24,14 @@ const StatsSection = () => {
 
   return (
     <section ref={ref} className="py-20 bg-hero relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10" />
+      {/* Blob decorations */}
+      <svg className="absolute -left-24 top-0 w-[400px] h-[350px] opacity-10" viewBox="0 0 400 350" fill="none">
+        <path d="M300 50C360 110 380 200 330 270C280 340 170 350 90 300C10 250 -10 150 40 80C90 10 200 -10 300 50Z" fill="hsl(174, 80%, 42%)" />
+      </svg>
+      <svg className="absolute -right-20 bottom-0 w-[300px] h-[300px] opacity-10" viewBox="0 0 300 300" fill="none">
+        <path d="M200 30C260 70 290 150 250 220C210 290 120 310 60 260C0 210 -10 120 40 60C90 0 140 -10 200 30Z" fill="hsl(40, 90%, 55%)" />
+      </svg>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <p className="uppercase tracking-[0.2em] text-xs font-semibold mb-4 text-primary-foreground/60">Who We Are</p>
@@ -43,7 +50,7 @@ const StatsSection = () => {
               }`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="text-4xl lg:text-5xl font-extrabold mb-2 text-primary-foreground">
+              <div className="text-4xl lg:text-5xl font-extrabold mb-2 text-gold">
                 {stat.value}
               </div>
               <div className="text-sm text-primary-foreground/65 font-medium">{stat.label}</div>
