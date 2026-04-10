@@ -1,5 +1,6 @@
 import { Globe, Users, GraduationCap, TrendingDown, Shield, Award } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import BlobShapes from "@/components/BlobShapes";
 
 const reasons = [
   {
@@ -50,8 +51,10 @@ const WhyPartnerSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="py-24 bg-background relative overflow-hidden">
+      <BlobShapes variant="wave-navy" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <p className="text-primary uppercase tracking-[0.2em] text-xs font-semibold mb-4">Why Partner With BIS</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground">

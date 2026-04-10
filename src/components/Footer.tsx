@@ -2,8 +2,13 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-16 bg-navy">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="py-16 relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(215, 70%, 12%), hsl(215, 60%, 18%))" }}>
+      {/* Decorative blob */}
+      <svg className="absolute -right-20 -top-10 w-[350px] h-[350px] opacity-[0.06]" viewBox="0 0 350 350" fill="none">
+        <path d="M250 50C310 100 340 190 290 260C240 330 140 350 70 290C0 230 -10 130 40 60C90 -10 190 0 250 50Z" fill="hsl(174, 100%, 29%)" />
+      </svg>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -43,15 +48,15 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-primary-foreground text-sm uppercase tracking-wider">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-2.5 text-sm text-primary-foreground/65">
-                <Phone className="w-4 h-4 text-primary" />
+                <Phone className="w-4 h-4 text-gold" />
                 +1 800-592-6079
               </li>
               <li className="flex items-center gap-2.5 text-sm text-primary-foreground/65">
-                <Mail className="w-4 h-4 text-primary" />
+                <Mail className="w-4 h-4 text-gold" />
                 contactus@thebisteam.com
               </li>
               <li className="flex items-center gap-2.5 text-sm text-primary-foreground/65">
-                <MapPin className="w-4 h-4 text-primary" />
+                <MapPin className="w-4 h-4 text-gold" />
                 United States
               </li>
             </ul>
