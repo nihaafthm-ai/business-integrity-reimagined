@@ -1,4 +1,4 @@
-import { Globe, Users, GraduationCap, TrendingDown, Shield, Award } from "lucide-react";
+import { Globe, Users, TrendingDown, Shield, Award } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import BlobShapes from "@/components/BlobShapes";
 
@@ -9,24 +9,19 @@ const reasons = [
     description: "A US based team managing the oversight of all solutions optimizes operational efficiency.",
   },
   {
-    icon: Users,
-    title: "Bilingual Workforce",
-    description: "Our bilingual team members help improve patient care in the growing Latino communities across the U.S.",
+    icon: Shield,
+    title: "Claims & Reimbursement",
+    description: "End-to-end medical billing, insurance verification, and claims processing to maximize reimbursements and reduce denials.",
   },
   {
-    icon: GraduationCap,
-    title: "Advanced Education",
-    description: "80% of the BIS workforce holds four-year college degrees, ensuring high-achieving professionals.",
+    icon: Users,
+    title: "Bilingual & Educated Workforce",
+    description: "Our bilingual team improves patient care across diverse communities, with 80% holding four-year college degrees ensuring top-tier expertise.",
   },
   {
     icon: TrendingDown,
     title: "Reduced Costs",
     description: "With a 50% reduction in overall costs, the BIS Patient Experience Team drives business growth.",
-  },
-  {
-    icon: Shield,
-    title: "Denial Management Experts",
-    description: "Unparalleled root cause analysis to minimize denial rates and streamline automations.",
   },
   {
     icon: Award,

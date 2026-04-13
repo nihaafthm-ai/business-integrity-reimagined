@@ -45,15 +45,15 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-primary-foreground text-sm uppercase tracking-wider">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-2.5 text-sm text-primary-foreground/65">
-                <Phone className="w-4 h-4 text-teal-glow" />
+                <Phone className="w-4 h-4 text-gold" />
                 +1 800-592-6079
               </li>
               <li className="flex items-center gap-2.5 text-sm text-primary-foreground/65">
-                <Mail className="w-4 h-4 text-teal-glow" />
+                <Mail className="w-4 h-4 text-gold" />
                 contactus@thebisteam.com
               </li>
               <li className="flex items-center gap-2.5 text-sm text-primary-foreground/65">
-                <MapPin className="w-4 h-4 text-teal-glow" />
+                <MapPin className="w-4 h-4 text-gold" />
                 United States
               </li>
             </ul>

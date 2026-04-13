@@ -32,7 +32,9 @@ const Navbar = () => {
         {/* Main nav */}
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-2.5">
-            <img src="/bis-logo.png" alt="Business Integrity Services" className="h-14 w-auto brightness-0 invert" />
+            <div className="bg-white/90 rounded-lg px-3 py-1.5 shadow-md">
+              <img src="/bis-logo.png" alt="Business Integrity Services" className="h-12 w-auto" />
+            </div>
           </a>
 
           <div className="hidden lg:flex items-center gap-8">
