@@ -50,7 +50,7 @@ const StatsSection = () => {
               }`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="text-4xl lg:text-5xl font-extrabold mb-2 text-primary-foreground">
+              <div className="text-4xl lg:text-5xl font-extrabold mb-2 text-gold">
                 {stat.value}
               </div>
               <div className="text-sm text-primary-foreground/65 font-medium">{stat.label}</div>
