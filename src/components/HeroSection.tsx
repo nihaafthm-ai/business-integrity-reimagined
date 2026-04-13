@@ -48,7 +48,7 @@ const HeroSection = () => {
                 <br />
                 Business
               </h1>
-              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-navy-deep mt-3">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gold mt-3">
                 AND your Patients
               </p>
             </div>
