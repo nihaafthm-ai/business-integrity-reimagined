@@ -13,7 +13,7 @@ const BlobShapes = ({ variant = "hero" }: BlobDecorProps) => {
       <>
         {/* Large teal blob — top right */}
         <svg className="absolute -right-20 -top-10 w-[500px] h-[500px] opacity-20 animate-float-slow" viewBox="0 0 500 500" fill="none">
-          <path d="M400 100C450 180 480 280 420 360C360 440 250 480 160 440C70 400 20 300 50 200C80 100 160 40 260 30C340 22 360 40 400 100Z" fill="hsl(174, 100%, 29%)" />
+          <path d="M400 100C450 180 480 280 420 360C360 440 250 480 160 440C70 400 20 300 50 200C80 100 160 40 260 30C340 22 360 40 400 100Z" fill="hsl(215, 60%, 18%)" />
         </svg>
         {/* Gold blob — left mid */}
         <svg className="absolute -left-16 top-1/3 w-[300px] h-[300px] opacity-15 animate-float delay-300" viewBox="0 0 300 300" fill="none">

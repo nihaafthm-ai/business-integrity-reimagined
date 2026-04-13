@@ -5,7 +5,7 @@ import BlobShapes from "@/components/BlobShapes";
 import { useEffect, useState } from "react";
 
 const badges = [
-  { label: "HIPAA Compliant", color: "bg-primary" },
+  { label: "HIPAA Compliant", color: "bg-navy" },
   { label: "ISO 27001:2022", color: "bg-navy-light" },
   { label: "ISO 9001:2015", color: "bg-gold-deep" },
 ];
@@ -58,7 +58,7 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button className="rounded-full px-8 py-6 text-base font-semibold group bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20">
+              <Button className="rounded-full px-8 py-6 text-base font-semibold group bg-navy text-primary-foreground hover:bg-navy-light shadow-lg shadow-navy/30">
                 Free Denial Trend Analysis
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>

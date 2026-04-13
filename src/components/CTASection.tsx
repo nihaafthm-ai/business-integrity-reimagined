@@ -16,7 +16,7 @@ const CTASection = () => {
           Find out how we do things differently for our partner practices and their patients at BIS. Recognized by Becker's Hospital Review as a top healthcare Revenue Cycle Management Company.
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-10">
-          <Button className="rounded-full px-10 py-6 text-base font-semibold group bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20">
+          <Button className="rounded-full px-10 py-6 text-base font-semibold group bg-navy text-primary-foreground hover:bg-navy-light shadow-lg shadow-navy/30">
             Contact Us Today
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>

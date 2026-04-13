@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 16%;
 
-    --primary: 174 100% 29%;
+    --primary: 215 60% 18%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 30% 96%;
@@ -22,7 +22,7 @@
     --muted: 210 18% 95%;
     --muted-foreground: 215 12% 42%;
 
-    --accent: 174 100% 24%;
+    --accent: 215 60% 22%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
@@ -30,12 +30,12 @@
 
     --border: 210 18% 90%;
     --input: 210 18% 90%;
-    --ring: 174 100% 29%;
+    --ring: 215 60% 18%;
 
     --radius: 0.75rem;
 
-    /* Premium palette: Navy + Teal + Gold */
-    --hero-bg: 215 60% 18%;
+    /* Premium palette: Teal primary + Navy accents + Gold highlights */
+    --hero-bg: 174 100% 22%;
     --hero-foreground: 0 0% 100%;
     --navy: 215 60% 18%;
     --navy-light: 215 45% 28%;
@@ -50,8 +50,8 @@
     --section-alt: 210 25% 97%;
     --surface-elevated: 0 0% 100%;
     --surface-subtle: 210 25% 97%;
-    --gradient-start: 215 60% 18%;
-    --gradient-end: 215 70% 12%;
+    --gradient-start: 174 100% 22%;
+    --gradient-end: 180 100% 16%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -85,7 +85,7 @@
     color: hsl(var(--hero-foreground));
   }
   .bg-hero {
-    background: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-deep)));
+    background: linear-gradient(135deg, hsl(var(--teal-dark)), hsl(var(--hero-bg)));
   }
   .bg-navy {
     background-color: hsl(var(--navy));
