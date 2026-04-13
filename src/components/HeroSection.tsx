@@ -5,8 +5,8 @@ import BlobShapes from "@/components/BlobShapes";
 import { useEffect, useState } from "react";
 
 const badges = [
-  { label: "HIPAA Compliant", color: "bg-navy" },
-  { label: "ISO 27001:2022", color: "bg-navy" },
+  { label: "HIPAA Compliant", color: "bg-navy-deep" },
+  { label: "ISO 27001:2022", color: "bg-navy-deep" },
   { label: "ISO 9001:2015", color: "bg-navy-deep" },
 ];
 
