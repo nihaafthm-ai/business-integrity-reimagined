@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-2.5">
             <div className="bg-white/90 rounded-lg px-3 py-1.5 shadow-md">
-              <img src="/bis-logo.png" alt="Business Integrity Services" className="h-6 w-32" />
+              <img src="/bis-logo.png" alt="Business Integrity Services" className="h-6 w-28" />
             </div>
           </a>
 
