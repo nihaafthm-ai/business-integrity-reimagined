@@ -30,12 +30,12 @@
 
     --border: 210 18% 90%;
     --input: 210 18% 90%;
-    --ring: 174 100% 29%;
+    --ring: 215 60% 18%;
 
     --radius: 0.75rem;
 
-    /* Premium palette: Navy + Teal + Gold */
-    --hero-bg: 215 60% 18%;
+    /* Premium palette: Teal primary + Navy accents + Gold highlights */
+    --hero-bg: 174 100% 22%;
     --hero-foreground: 0 0% 100%;
     --navy: 215 60% 18%;
     --navy-light: 215 45% 28%;
@@ -50,8 +50,8 @@
     --section-alt: 210 25% 97%;
     --surface-elevated: 0 0% 100%;
     --surface-subtle: 210 25% 97%;
-    --gradient-start: 215 60% 18%;
-    --gradient-end: 215 70% 12%;
+    --gradient-start: 174 100% 22%;
+    --gradient-end: 180 100% 16%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
