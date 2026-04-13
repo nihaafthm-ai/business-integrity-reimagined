@@ -32,13 +32,7 @@ const Navbar = () => {
         {/* Main nav */}
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-primary-foreground flex items-center justify-center">
-              <span className="text-primary font-bold text-sm">B</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-primary-foreground leading-tight">BIS</span>
-              <span className="hidden sm:block text-[10px] text-primary-foreground/50 uppercase tracking-wider leading-tight">Business Integrity Services</span>
-            </div>
+            <img src="/bis-logo.png" alt="Business Integrity Services" className="h-10 w-auto" />
           </a>
 
           <div className="hidden lg:flex items-center gap-8">

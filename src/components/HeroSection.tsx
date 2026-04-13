@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const badges = [
   { label: "HIPAA Compliant", color: "bg-navy" },
   { label: "ISO 27001:2022", color: "bg-navy-light" },
-  { label: "ISO 9001:2015", color: "bg-gold-deep" },
+  { label: "ISO 9001:2015", color: "bg-navy-deep" },
 ];
 
 const partnerNames = [
@@ -48,7 +48,7 @@ const HeroSection = () => {
                 <br />
                 Business
               </h1>
-              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gold mt-3">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-foreground/80 mt-3">
                 AND your Patients
               </p>
             </div>

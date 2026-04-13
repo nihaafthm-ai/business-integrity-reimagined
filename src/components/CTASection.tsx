@@ -8,7 +8,7 @@ const CTASection = () => {
       <BlobShapes variant="cta" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-gold/70 mb-4">Get Started</p>
+        <p className="text-xs uppercase tracking-[0.25em] font-semibold text-primary-foreground/60 mb-4">Get Started</p>
         <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-primary-foreground">
           Ready for a Better Practice <span className="text-teal-glow">Partnership?</span>
         </h2>

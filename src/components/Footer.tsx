@@ -11,11 +11,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">B</span>
-              </div>
-              <span className="text-xl font-bold text-primary-foreground">BIS</span>
+            <div className="mb-4">
+              <img src="/bis-logo.png" alt="Business Integrity Services" className="h-12 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm leading-relaxed text-primary-foreground/65">
               Driving Operational Excellence in healthcare through expert revenue cycle management and patient-focused solutions.
@@ -48,15 +45,15 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-primary-foreground text-sm uppercase tracking-wider">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-2.5 text-sm text-primary-foreground/65">
-                <Phone className="w-4 h-4 text-gold" />
+                <Phone className="w-4 h-4 text-teal-glow" />
                 +1 800-592-6079
               </li>
               <li className="flex items-center gap-2.5 text-sm text-primary-foreground/65">
-                <Mail className="w-4 h-4 text-gold" />
+                <Mail className="w-4 h-4 text-teal-glow" />
                 contactus@thebisteam.com
               </li>
               <li className="flex items-center gap-2.5 text-sm text-primary-foreground/65">
-                <MapPin className="w-4 h-4 text-gold" />
+                <MapPin className="w-4 h-4 text-teal-glow" />
                 United States
               </li>
             </ul>
