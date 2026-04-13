@@ -32,7 +32,7 @@ const WeGetItSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 bg-background relative overflow-hidden">
+    <section ref={ref} className="py-16 bg-background relative overflow-hidden">
       <BlobShapes variant="light" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
