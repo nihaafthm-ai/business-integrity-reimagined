@@ -10,7 +10,7 @@ const CTASection = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <p className="text-xs uppercase tracking-[0.25em] font-semibold text-primary-foreground/60 mb-4">Get Started</p>
         <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-primary-foreground">
-          Ready for a Better Practice <span className="text-gold-glow">Partnership?</span>
+          Ready for a Better Practice <span className="text-gold">Partnership?</span>
         </h2>
         <p className="text-base lg:text-lg mb-10 max-w-2xl mx-auto text-primary-foreground/75 leading-relaxed">
           Find out how we do things differently for our partner practices and their patients at BIS. Recognized by Becker's Hospital Review as a top healthcare Revenue Cycle Management Company.
