@@ -40,13 +40,14 @@ const HeroSection = () => {
                 Driving Operational Excellence
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-primary-foreground">
-                A Solutions
+                At Last.
                 <br />
-                Partner That
+                A Solutions Partner
                 <br />
-                Prioritizes Your
+                That Prioritizes
                 <br />
-                Business
+                Your Business
+                              
               </h1>
               <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gold mt-3">
                 AND your Patients
