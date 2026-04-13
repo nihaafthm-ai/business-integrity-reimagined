@@ -37,7 +37,7 @@ const WeGetItSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'} -mt-4`}>
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'} `}>
             <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 mb-6">
               <div className="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-xs">BIS</span>
