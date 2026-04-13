@@ -42,7 +42,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section ref={ref} id="solutions" className="py-24 bg-section-alt relative overflow-hidden">
+    <section ref={ref} id="solutions" className="py-16 bg-section-alt relative overflow-hidden">
       <BlobShapes variant="light" />
       <BlobShapes variant="wave-teal" />
 
