@@ -9,19 +9,24 @@ const reasons = [
     description: "A US based team managing the oversight of all solutions optimizes operational efficiency.",
   },
   {
-    icon: Shield,
+    icon: Receipt,
     title: "Claims & Reimbursement",
     description: "End-to-end medical billing, insurance verification, and claims processing to maximize reimbursements and reduce denials.",
   },
   {
-    icon: Users,
-    title: "Bilingual & Educated Workforce",
+    icon: GraduationCap,
+    title: "Bilingual & Advanced Educated Workforce",
     description: "Our bilingual team improves patient care across diverse communities, with 80% holding four-year college degrees ensuring top-tier expertise.",
   },
   {
     icon: TrendingDown,
     title: "Reduced Costs",
     description: "With a 50% reduction in overall costs, the BIS Patient Experience Team drives business growth.",
+  },
+  {
+    icon: Shield,
+    title: "Denial Management Experts",
+    description: "Unparalleled root cause analysis to minimize denial rates and streamline automations.",
   },
   {
     icon: Award,
