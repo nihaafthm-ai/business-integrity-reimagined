@@ -1,4 +1,4 @@
-import { Globe, Users, TrendingDown, Shield, Award } from "lucide-react";
+import { Globe, Users, TrendingDown, Shield, Award, Receipt, GraduationCap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import BlobShapes from "@/components/BlobShapes";
 
