@@ -50,7 +50,7 @@ const HeroSection = () => {
                               
               </h1>
               <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gold mt-3">
-                AND your Patients
+                AND Your Patients
               </p>
             </div>
 
