@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-16 relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(215, 70%, 12%), hsl(215, 60%, 18%))" }}>
+    <footer className="py-16 relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(180, 100%, 16%), hsl(174, 100%, 22%))" }}>
       {/* Decorative blob */}
       <svg className="absolute -right-20 -top-10 w-[350px] h-[350px] opacity-[0.06]" viewBox="0 0 350 350" fill="none">
         <path d="M250 50C310 100 340 190 290 260C240 330 140 350 70 290C0 230 -10 130 40 60C90 -10 190 0 250 50Z" fill="hsl(174, 100%, 29%)" />
