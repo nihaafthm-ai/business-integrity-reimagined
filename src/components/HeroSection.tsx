@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-professional.jpg";
 import BlobShapes from "@/components/BlobShapes";
 import { useEffect, useState } from "react";
+import hipaaBadge from "@/assets/hipaa-badge.svg";
+import iso9001Badge from "@/assets/iso-9001-badge.jpg";
+import iso27001Badge from "@/assets/iso-27001-badge.jpg";
+import beckersLogo from "@/assets/beckers-logo.png";
+import greatPlaceLogo from "@/assets/great-place-to-work.png";
+import hfmaLogo from "@/assets/hfma-logo.png";
 
 const badges = [
   { label: "HIPAA Compliant", color: "bg-navy-deep" },
@@ -10,13 +16,13 @@ const badges = [
   { label: "ISO 9001:2015", color: "bg-navy-deep" },
 ];
 
-const partnerNames = [
-  "Becker's Hospital Review",
-  "HIPAA Compliant",
-  "ISO 27001 Certified",
-  "ISO 9001 Certified",
-  "Great Place to Work",
-  "Healthcare Financial Mgmt",
+const partnerLogos = [
+  { src: beckersLogo, alt: "Becker's Hospital Review" },
+  { src: hipaaBadge, alt: "HIPAA Compliant" },
+  { src: iso27001Badge, alt: "ISO 27001:2022 Certified" },
+  { src: iso9001Badge, alt: "ISO 9001:2015 Certified" },
+  { src: greatPlaceLogo, alt: "Great Place to Work Certified" },
+  { src: hfmaLogo, alt: "Healthcare Financial Management Association" },
 ];
 
 const HeroSection = () => {
@@ -122,9 +128,9 @@ const HeroSection = () => {
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
             <div className="flex animate-scroll-left">
-              {[...partnerNames, ...partnerNames, ...partnerNames, ...partnerNames].map((name, i) => (
-                <div key={i} className="flex-shrink-0 mx-10 flex items-center justify-center h-12">
-                  <span className="text-muted-foreground font-semibold text-sm whitespace-nowrap tracking-wide">{name}</span>
+              {[...partnerLogos, ...partnerLogos, ...partnerLogos, ...partnerLogos].map((logo, i) => (
+                <div key={i} className="flex-shrink-0 mx-10 flex items-center justify-center h-16">
+                  <img src={logo.src} alt={logo.alt} className="h-14 w-auto object-contain" loading="lazy" />
                 </div>
               ))}
             </div>
