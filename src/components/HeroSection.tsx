@@ -22,7 +22,7 @@ const partnerLogos = [
   { src: iso27001Badge, alt: "ISO 27001:2022 Certified" },
   { src: iso9001Badge, alt: "ISO 9001:2015 Certified" },
   { src: greatPlaceLogo, alt: "Great Place to Work Certified" },
-  { src: hfmaLogo, alt: "Healthcare Financial Management Association" },
+  
 ];
 
 const HeroSection = () => {
