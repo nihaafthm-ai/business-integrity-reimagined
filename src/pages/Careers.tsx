@@ -40,21 +40,55 @@ const locations = [
   {
     name: "United States",
     link: "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=d8f698f0-12a4-46d5-b191-1e5220d8ba12&ccId=19000101_000001&type=JS&lang=en_US",
-    coords: { cx: "22%", cy: "35%" },
     flag: "🇺🇸",
+    description: "Our headquarters and primary operations hub",
   },
   {
     name: "Colombia",
     link: "https://businessintegrityservices.com/job-listing/",
-    coords: { cx: "28%", cy: "55%" },
     flag: "🇨🇴",
+    description: "Bilingual workforce excellence center",
   },
   {
     name: "India",
     link: "https://businessintegrityservices.com/careers/job-listing/",
-    coords: { cx: "68%", cy: "42%" },
     flag: "🇮🇳",
+    description: "Technology and operations delivery center",
   },
+];
+
+/* Dot positions for a world map (percentage-based) */
+const worldDots: Array<{ x: number; y: number; size?: number }> = [];
+// Generate a dotted world map pattern
+const continentRegions = [
+  // North America
+  ...Array.from({ length: 60 }, () => ({ x: 12 + Math.random() * 18, y: 15 + Math.random() * 25, size: 1.5 + Math.random() })),
+  // Central America
+  ...Array.from({ length: 15 }, () => ({ x: 18 + Math.random() * 8, y: 38 + Math.random() * 10, size: 1.2 + Math.random() * 0.5 })),
+  // South America
+  ...Array.from({ length: 50 }, () => ({ x: 22 + Math.random() * 14, y: 48 + Math.random() * 35, size: 1.5 + Math.random() })),
+  // Europe
+  ...Array.from({ length: 45 }, () => ({ x: 44 + Math.random() * 12, y: 12 + Math.random() * 22, size: 1.3 + Math.random() * 0.7 })),
+  // Africa
+  ...Array.from({ length: 55 }, () => ({ x: 44 + Math.random() * 16, y: 35 + Math.random() * 35, size: 1.5 + Math.random() })),
+  // Middle East
+  ...Array.from({ length: 20 }, () => ({ x: 56 + Math.random() * 8, y: 25 + Math.random() * 15, size: 1.2 + Math.random() * 0.5 })),
+  // Asia
+  ...Array.from({ length: 70 }, () => ({ x: 58 + Math.random() * 25, y: 10 + Math.random() * 30, size: 1.5 + Math.random() })),
+  // India subcontinent
+  ...Array.from({ length: 30 }, () => ({ x: 62 + Math.random() * 10, y: 30 + Math.random() * 18, size: 1.5 + Math.random() })),
+  // Southeast Asia
+  ...Array.from({ length: 25 }, () => ({ x: 75 + Math.random() * 12, y: 38 + Math.random() * 18, size: 1.3 + Math.random() * 0.5 })),
+  // Australia
+  ...Array.from({ length: 35 }, () => ({ x: 78 + Math.random() * 14, y: 62 + Math.random() * 18, size: 1.5 + Math.random() })),
+];
+worldDots.push(...continentRegions);
+
+// Location pins on the map
+const mapPins = [
+  { x: 22, y: 30, label: "US" },
+  { x: 27, y: 52, label: "CO" },
+  { x: 67, y: 38, label: "IN" },
 ];
 
 function useInView(threshold = 0.1) {
@@ -84,12 +118,11 @@ const Careers = () => {
     <div className="min-h-screen">
       <Navbar />
 
-      {/* ───── Hero-like Intro Section (similar to solutions page) ───── */}
+      {/* ───── Hero-like Intro Section ───── */}
       <section
         ref={heroObs.ref}
         className="relative pt-28 pb-20 overflow-hidden bg-hero"
       >
-        {/* Background image overlay */}
         <div className="absolute inset-0">
           <img src={careersHero} alt="" className="w-full h-full object-cover opacity-20" width={1920} height={800} />
           <div className="absolute inset-0 bg-gradient-to-b from-[hsl(174,95%,24%)] via-[hsl(174,95%,24%,0.85)] to-[hsl(180,100%,18%)]" />
@@ -108,7 +141,6 @@ const Careers = () => {
           </p>
         </div>
 
-        {/* Bottom wave */}
         <div className="absolute inset-x-0 bottom-0 overflow-hidden leading-[0]">
           <svg className="relative block w-full h-[80px]" viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none">
             <path d="M0 40C240 80 480 0 720 40C960 80 1200 0 1440 40V80H0Z" fill="hsl(0,0%,100%)" fillOpacity="1" />
@@ -116,7 +148,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* ───── Our Vision ───── */}
+      {/* ───── Our Vision (white section) ───── */}
       <section ref={visionObs.ref} className="py-20 bg-background relative overflow-hidden">
         <BlobShapes variant="light" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -142,13 +174,13 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* ───── Our Values ───── */}
-      <section ref={valuesObs.ref} className="py-20 bg-section-alt relative overflow-hidden">
-        <BlobShapes variant="wave-teal" />
+      {/* ───── Our Values (teal background) ───── */}
+      <section ref={valuesObs.ref} className="py-20 bg-hero relative overflow-hidden">
+        <BlobShapes variant="cta" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <p className={`text-primary uppercase tracking-[0.2em] text-xs font-semibold mb-4 transition-all duration-700 ${valuesObs.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>What Drives Us</p>
-            <h2 className={`text-3xl lg:text-4xl font-bold text-foreground mb-4 transition-all duration-700 delay-100 ${valuesObs.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <p className={`text-hero/70 uppercase tracking-[0.2em] text-xs font-semibold mb-4 transition-all duration-700 ${valuesObs.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>What Drives Us</p>
+            <h2 className={`text-3xl lg:text-4xl font-bold text-hero mb-4 transition-all duration-700 delay-100 ${valuesObs.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               Our <span className="text-gold">Values</span>
             </h2>
           </div>
@@ -159,22 +191,25 @@ const Careers = () => {
               return (
                 <div
                   key={value.title}
-                  className={`group bg-card rounded-2xl p-6 border border-border hover:border-primary/20 premium-shadow hover:premium-shadow-lg transition-all duration-500 cursor-pointer ${
+                  className={`group glass-card rounded-2xl p-6 transition-all duration-500 cursor-pointer hover:bg-[hsl(0,0%,100%,0.15)] ${
                     valuesObs.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-                  } ${i >= 3 ? 'lg:col-span-1 sm:col-span-1' : ''}`}
+                  }`}
                   style={{ transitionDelay: `${i * 100}ms` }}
                   onClick={() => setExpandedValue(isExpanded ? null : i)}
                 >
-                  <div className="w-14 h-14 rounded-xl bg-hero flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 rounded-xl bg-[hsl(0,0%,100%,0.15)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <Icon className="w-7 h-7 text-hero" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
-                  <p className={`text-muted-foreground text-sm leading-relaxed transition-all duration-300 ${isExpanded ? '' : 'line-clamp-3'}`}>
+                  <h3 className="text-xl font-bold text-hero mb-3">{value.title}</h3>
+                  <p className={`text-hero/80 text-sm leading-relaxed transition-all duration-300 ${isExpanded ? '' : 'line-clamp-3'}`}>
                     {value.description}
                   </p>
-                  <button className="mt-3 text-primary text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all">
-                    {isExpanded ? 'Show Less' : 'Read More'} <ArrowRight className="w-4 h-4" />
-                  </button>
+                  <a
+                    className="mt-3 text-gold text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all cursor-pointer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {isExpanded ? 'Show Less' : 'Read More'}
+                  </a>
                 </div>
               );
             })}
@@ -182,33 +217,33 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* ───── Equal Employment Opportunity ───── */}
-      <section ref={eeoObs.ref} className="py-20 bg-background relative overflow-hidden">
-        <BlobShapes variant="light" />
+      {/* ───── Equal Employment Opportunity (teal bg) ───── */}
+      <section ref={eeoObs.ref} className="py-20 bg-hero relative overflow-hidden">
+        <BlobShapes variant="hero" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={`order-2 md:order-1 transition-all duration-700 ${eeoObs.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-              <p className="text-primary uppercase tracking-[0.2em] text-xs font-semibold mb-4">Our Commitment</p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              <p className="text-hero/70 uppercase tracking-[0.2em] text-xs font-semibold mb-4">Our Commitment</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-hero mb-4">
                 Putting People First: <span className="text-gold">Equal Employment Opportunity</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed text-sm mb-4">
+              <p className="text-hero/90 leading-relaxed text-sm mb-4">
                 We are committed to Equal Employment Opportunity (EEO) and comply with all federal, state, and local laws that prohibit workplace discrimination and unlawful retaliation. BIS strictly prohibits all discrimination on the basis of race, ancestry, color, age, national origin, ethnicity, religious creed or belief, physical or mental disability, marital or familial status, legally protected medical condition, genetic information, military or veteran status, sex, gender, sexual orientation, citizenship status, protected activity, or any other status or classification protected by applicable federal, state, and/or local laws.
               </p>
-              <p className="text-muted-foreground leading-relaxed text-sm">
+              <p className="text-hero/90 leading-relaxed text-sm">
                 This commitment also extends to all areas of personnel actions, including but not limited to advertising, recruiting, hiring, training, evaluation, promotion, transfer, work assignments, accommodation requests, requests for leave, compensation, benefits, disciplinary actions, layoffs, discharges, terminations, participation in company activities, programs, or events, or any other terms, conditions, or privileges of employment.
               </p>
             </div>
             <div className={`order-1 md:order-2 transition-all duration-700 delay-200 ${eeoObs.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
-              <img src={careersEeo} alt="Equal Employment Opportunity" className="rounded-2xl premium-shadow-lg w-full object-cover h-[400px]" loading="lazy" width={800} height={600} />
+              <img src={careersEeo} alt="Equal Employment Opportunity" className="rounded-2xl w-full object-cover h-[400px]" style={{ boxShadow: '0 12px 48px -8px rgba(0,0,0,0.3)' }} loading="lazy" width={800} height={600} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ───── Diversity, Equity, and Inclusion ───── */}
-      <section ref={deiObs.ref} className="py-20 bg-section-alt relative overflow-hidden">
-        <BlobShapes variant="wave-navy" />
+      {/* ───── Diversity, Equity, and Inclusion (white section) ───── */}
+      <section ref={deiObs.ref} className="py-20 bg-background relative overflow-hidden">
+        <BlobShapes variant="light" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={`transition-all duration-700 ${deiObs.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
@@ -227,7 +262,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* ───── World Map / Locations ───── */}
+      {/* ───── World Map / Locations (teal bg) ───── */}
       <section ref={mapObs.ref} className="py-20 bg-hero relative overflow-hidden">
         <BlobShapes variant="cta" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -243,71 +278,88 @@ const Careers = () => {
             </p>
           </div>
 
-          {/* World Map SVG */}
-          <div className={`relative max-w-4xl mx-auto mb-12 transition-all duration-700 delay-300 ${mapObs.isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-            <svg viewBox="0 0 1000 500" className="w-full h-auto" fill="none">
-              {/* Simplified world map outline */}
-              {/* North America */}
-              <path d="M150 120 L180 100 L220 90 L260 95 L280 110 L300 105 L310 120 L290 140 L300 160 L280 180 L260 200 L250 230 L230 250 L210 240 L200 220 L180 230 L170 210 L160 190 L150 170 L140 150Z" fill="hsl(0,0%,100%)" fillOpacity="0.12" stroke="hsl(0,0%,100%)" strokeOpacity="0.25" strokeWidth="1" />
-              {/* South America */}
-              <path d="M250 270 L280 260 L310 280 L320 310 L310 340 L300 370 L280 400 L260 410 L240 390 L230 360 L240 330 L250 300Z" fill="hsl(0,0%,100%)" fillOpacity="0.12" stroke="hsl(0,0%,100%)" strokeOpacity="0.25" strokeWidth="1" />
-              {/* Europe */}
-              <path d="M440 100 L460 90 L490 95 L520 100 L530 120 L510 130 L500 150 L480 145 L460 150 L450 135 L440 120Z" fill="hsl(0,0%,100%)" fillOpacity="0.12" stroke="hsl(0,0%,100%)" strokeOpacity="0.25" strokeWidth="1" />
-              {/* Africa */}
-              <path d="M460 170 L500 160 L530 170 L550 200 L560 240 L550 280 L530 310 L510 330 L490 320 L470 290 L460 260 L450 230 L455 200Z" fill="hsl(0,0%,100%)" fillOpacity="0.12" stroke="hsl(0,0%,100%)" strokeOpacity="0.25" strokeWidth="1" />
-              {/* Asia */}
-              <path d="M540 80 L580 70 L640 75 L700 80 L740 100 L760 120 L750 150 L730 170 L700 180 L670 190 L640 200 L610 190 L580 170 L560 150 L540 130 L535 110Z" fill="hsl(0,0%,100%)" fillOpacity="0.12" stroke="hsl(0,0%,100%)" strokeOpacity="0.25" strokeWidth="1" />
-              {/* India subcontinent */}
-              <path d="M640 200 L670 195 L690 210 L700 240 L690 270 L670 290 L650 280 L640 260 L635 230Z" fill="hsl(0,0%,100%)" fillOpacity="0.12" stroke="hsl(0,0%,100%)" strokeOpacity="0.25" strokeWidth="1" />
-              {/* Australia */}
-              <path d="M750 320 L790 310 L830 320 L850 340 L840 370 L810 380 L780 375 L760 360 L750 340Z" fill="hsl(0,0%,100%)" fillOpacity="0.12" stroke="hsl(0,0%,100%)" strokeOpacity="0.25" strokeWidth="1" />
-
-              {/* Location markers with pulse animation */}
-              {/* US */}
-              <circle cx="220" cy="170" r="20" fill="hsl(322,43%,24%)" fillOpacity="0.3" className="animate-pulse-soft" />
-              <circle cx="220" cy="170" r="10" fill="hsl(322,43%,24%)" stroke="hsl(0,0%,100%)" strokeWidth="2" />
-              <circle cx="220" cy="170" r="4" fill="hsl(0,0%,100%)" />
-
-              {/* Colombia */}
-              <circle cx="260" cy="280" r="20" fill="hsl(322,43%,24%)" fillOpacity="0.3" className="animate-pulse-soft" style={{ animationDelay: '0.5s' }} />
-              <circle cx="260" cy="280" r="10" fill="hsl(322,43%,24%)" stroke="hsl(0,0%,100%)" strokeWidth="2" />
-              <circle cx="260" cy="280" r="4" fill="hsl(0,0%,100%)" />
-
-              {/* India */}
-              <circle cx="665" cy="240" r="20" fill="hsl(322,43%,24%)" fillOpacity="0.3" className="animate-pulse-soft" style={{ animationDelay: '1s' }} />
-              <circle cx="665" cy="240" r="10" fill="hsl(322,43%,24%)" stroke="hsl(0,0%,100%)" strokeWidth="2" />
-              <circle cx="665" cy="240" r="4" fill="hsl(0,0%,100%)" />
-
-              {/* Connecting lines */}
-              <line x1="220" y1="170" x2="260" y2="280" stroke="hsl(0,0%,100%)" strokeOpacity="0.15" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="260" y1="280" x2="665" y2="240" stroke="hsl(0,0%,100%)" strokeOpacity="0.15" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="220" y1="170" x2="665" y2="240" stroke="hsl(0,0%,100%)" strokeOpacity="0.15" strokeWidth="1" strokeDasharray="4 4" />
-            </svg>
-          </div>
-
-          {/* Location Cards */}
-          <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {/* Location Cards ABOVE the map */}
+          <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
             {locations.map((loc, i) => (
               <a
                 key={loc.name}
                 href={loc.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group glass-card rounded-2xl p-6 text-center hover:bg-[hsl(0,0%,100%,0.15)] transition-all duration-500 ${
+                className={`group bg-background rounded-2xl p-6 text-center premium-shadow-lg hover:scale-105 transition-all duration-500 ${
                   mapObs.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
-                style={{ transitionDelay: `${400 + i * 150}ms` }}
+                style={{ transitionDelay: `${200 + i * 150}ms` }}
               >
                 <div className="text-4xl mb-3">{loc.flag}</div>
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <MapPin className="w-4 h-4 text-gold" />
-                  <h3 className="text-lg font-bold text-hero">{loc.name}</h3>
+                  <MapPin className="w-4 h-4 text-[hsl(var(--teal))]" />
+                  <h3 className="text-lg font-bold text-foreground">{loc.name}</h3>
                 </div>
-                <div className="inline-flex items-center gap-1 text-gold text-sm font-semibold group-hover:gap-2 transition-all">
+                <p className="text-muted-foreground text-xs mb-3">{loc.description}</p>
+                <span className="inline-flex items-center gap-1 text-[hsl(var(--teal))] text-sm font-semibold group-hover:gap-2 transition-all">
                   View Opportunities <ExternalLink className="w-3.5 h-3.5" />
-                </div>
+                </span>
               </a>
             ))}
+          </div>
+
+          {/* Dotted World Map */}
+          <div className={`relative max-w-5xl mx-auto transition-all duration-700 delay-500 ${mapObs.isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+            <svg viewBox="0 0 100 55" className="w-full h-auto" preserveAspectRatio="xMidYMid meet">
+              {/* Dots for continents */}
+              {worldDots.map((dot, i) => (
+                <circle
+                  key={i}
+                  cx={dot.x}
+                  cy={dot.y}
+                  r={(dot.size || 1.5) * 0.18}
+                  fill="hsl(0,0%,100%)"
+                  fillOpacity={0.2 + Math.random() * 0.15}
+                />
+              ))}
+
+              {/* Connecting curved lines between pins */}
+              <path
+                d={`M ${mapPins[0].x} ${mapPins[0].y} Q 24.5 42 ${mapPins[1].x} ${mapPins[1].y}`}
+                stroke="hsl(322,43%,24%)"
+                strokeWidth="0.15"
+                strokeDasharray="0.5 0.3"
+                fill="none"
+                opacity="0.6"
+              />
+              <path
+                d={`M ${mapPins[1].x} ${mapPins[1].y} Q 47 30 ${mapPins[2].x} ${mapPins[2].y}`}
+                stroke="hsl(322,43%,24%)"
+                strokeWidth="0.15"
+                strokeDasharray="0.5 0.3"
+                fill="none"
+                opacity="0.6"
+              />
+              <path
+                d={`M ${mapPins[0].x} ${mapPins[0].y} Q 44 15 ${mapPins[2].x} ${mapPins[2].y}`}
+                stroke="hsl(322,43%,24%)"
+                strokeWidth="0.15"
+                strokeDasharray="0.5 0.3"
+                fill="none"
+                opacity="0.6"
+              />
+
+              {/* Location pins */}
+              {mapPins.map((pin, i) => (
+                <g key={i}>
+                  {/* Outer pulse ring */}
+                  <circle cx={pin.x} cy={pin.y} r="2.5" fill="hsl(322,43%,24%)" fillOpacity="0.25" className="animate-pulse-soft" style={{ animationDelay: `${i * 0.5}s` }} />
+                  {/* Pin circle */}
+                  <circle cx={pin.x} cy={pin.y} r="1.2" fill="hsl(322,43%,24%)" stroke="hsl(0,0%,100%)" strokeWidth="0.3" />
+                  <circle cx={pin.x} cy={pin.y} r="0.45" fill="hsl(0,0%,100%)" />
+                  {/* Label */}
+                  <text x={pin.x} y={pin.y - 2.5} textAnchor="middle" fill="hsl(0,0%,100%)" fontSize="1.8" fontWeight="700" fontFamily="'Plus Jakarta Sans', sans-serif" opacity="0.9">
+                    {pin.label}
+                  </text>
+                </g>
+              ))}
+            </svg>
           </div>
         </div>
 
